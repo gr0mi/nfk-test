@@ -27,7 +27,5 @@
     <div class="blog-detail-text">
         <p><?=$arResult['DETAIL_TEXT']?></p>
     </div>
-
-    <a href="#" id="blog-add-fav" data-id="<?=$arResult['ID']?>">Add to fav</a>
 </div>
 
