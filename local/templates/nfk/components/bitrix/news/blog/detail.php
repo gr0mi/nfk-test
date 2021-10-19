@@ -71,6 +71,7 @@ $this->setFrameMode(true);
 ); ?>
 
 <?php
+if($USER->IsAuthorized()):
 $APPLICATION->IncludeComponent(
     "imrg:favorite",
     "",
@@ -78,7 +79,8 @@ $APPLICATION->IncludeComponent(
         'ELEMENT_ID' => $ElementID
     ),
     false
-); ?>
+);
+endif;?>
 
 
 

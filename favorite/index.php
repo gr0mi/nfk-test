@@ -1,7 +1,25 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
+global $APPLICATION,
+        $USER;
 $APPLICATION->SetTitle("Избранное");
 define("NEED_AUTH", true);
+
+if(!$USER->IsAuthorized()){
+
+    ?>
+    <h4>Авторизуйтесь, чтобы использовать функционал отложенных записей</h4>
+    <?
+
+    $APPLICATION->IncludeComponent("bitrix:system.auth.form","",Array(
+            "REGISTER_URL" => "",
+            "FORGOT_PASSWORD_URL" => "",
+            "PROFILE_URL" => "/blog",
+            "SHOW_ERRORS" => "Y"
+        )
+    );
+    die;
+}
 ?>
 
 
